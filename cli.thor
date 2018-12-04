@@ -14,7 +14,7 @@ class Cli < Thor
   desc 'download_single', 'download single URL.'
   long_desc <<-LONGDESC
     \x5`thor download_single --url URL --dest PATH` downloads content from given URL
-    end stores it to DEST. 
+    end stores it to DEST.
     \n\n
   LONGDESC
   method_option :url, type: :string, default: nil, desc: 'path to file'
