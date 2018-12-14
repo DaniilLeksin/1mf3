@@ -29,21 +29,13 @@ module FetcherService
       p "[ERROR]: #{error.message} [FOR]: #{url}"
     end
 
-    def generate_name(filename, extension)
-      if extension.empty?
-        "#{Time.now.to_i}_#{filename}"
-      else
-        "#{Time.now.to_i}_#{filename}.#{extension}"
-      end
-    end
-
     # Retrieves potential filename from the URL path.
     def filename_from_path(name, content_type)
       return "#{Time.now.to_i}_#{name}" if content_type.empty?
 
       extension = content_type.split('/').last
       filename = name.split('/').last
-      alternative_name = generate_name(filename, extension)
+      alternative_name = extension.empty? ? "#{Time.now.to_i}_#{filename}" : "#{Time.now.to_i}_#{filename}.#{extension}"
       filename = File.extname(filename).empty? ? alternative_name : filename
       CGI.unescape(filename) if filename
     end

@@ -50,4 +50,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 .idea/
+.DS_Store
+coverage/
 output/
