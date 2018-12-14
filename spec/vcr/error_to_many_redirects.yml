@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://mywebserver.com/images/271947.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Down/4.7.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Connection:
+      - close
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Location:
+      - "/VYihZ/images/271947.jpg"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 31 Dec 1989 21:00:00 GMT
+- request:
+    method: get
+    uri: http://mywebserver.com/VYihZ/images/271947.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Down/4.7.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Connection:
+      - close
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Location:
+      - "/images/271947.jpg"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 31 Dec 1989 21:00:00 GMT
+- request:
+    method: get
+    uri: http://mywebserver.com/images/271947.jpg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Down/4.7.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx/1.12.2
+      Date:
+      - Fri, 14 Dec 2018 10:15:37 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      Location:
+      - http://www.goldnames.com/view/219
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 31 Dec 1989 21:00:00 GMT
+recorded_with: VCR 3.0.3
