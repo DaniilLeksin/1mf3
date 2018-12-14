@@ -7,26 +7,26 @@ module FetcherService
       p '\(• ◡ •)// Yay!'
     end
 
-    def content(url)
-      File.readlines(url).map(&:strip)
-    end
-
-    def download(url, dest)
-      urls = content(url)
+    def download(url, dest, test_mode = false)
+      urls = File.readlines(url).map(&:strip)
       urls.each { |v| download_image(v, dest) }
+    rescue StandardError => error
+      raise error if test_mode
+
+      p "[ERROR]: #{error.message}"
     end
 
-    def download_image(url, destination)
+    def download_image(url, destination, test_mode = false)
       tempfile = Down::NetHttp.download(url)
       filename = tempfile.original_filename
-
       # Monkeypatched Down::Utils.filename_from_path
       name = filename_from_path(filename, tempfile.content_type)
-      # name = filename_from_path(filename, '')
       path = "#{destination}/#{name}".gsub!(%r{/+}, '/')
       FileUtils.mv tempfile.path, path
     rescue StandardError => error
-      p error.message
+      raise error if test_mode
+
+      p "[ERROR]: #{error.message} [FOR]: #{url}"
     end
 
     def generate_name(filename, extension)
