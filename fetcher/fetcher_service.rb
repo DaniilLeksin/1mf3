@@ -16,6 +16,9 @@ module FetcherService
       p "[ERROR]: #{error.message}"
     end
 
+    def foo
+    end
+
     def download_image(url, destination, test_mode = false)
       tempfile = Down::NetHttp.download(url)
       filename = tempfile.original_filename
