@@ -14,6 +14,9 @@ module FetcherService
       raise error if test_mode
 
       p "[ERROR]: #{error.message}"
+    end 
+
+    def foo
     end
 
     def download_image(url, destination, test_mode = false)
