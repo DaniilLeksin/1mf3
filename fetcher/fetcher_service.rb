@@ -14,7 +14,11 @@ module FetcherService
       raise error if test_mode
 
       p "[ERROR]: #{error.message}"
-    end 
+    end
+
+    def puts
+      p puts
+    end
 
     def foo
     end
