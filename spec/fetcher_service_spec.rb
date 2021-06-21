@@ -12,14 +12,14 @@ describe 'Fetcher Service' do
   end
 
   context 'errors' do
-    it 'should save single file into destination directory' do
-      VCR.use_cassette('good_request') do
-        url = 'https://i.redd.it/so5cg125lh001.jpg'
-        expect do
-          FetcherService.download_image(url, 'output', true)
-        end.not_to raise_error
-      end
-    end
+    # it 'should save single file into destination directory' do
+    #   VCR.use_cassette('good_request') do
+    #     url = 'https://i.redd.it/so5cg125lh001.jpg'
+    #     expect do
+    #       FetcherService.download_image(url, 'output', true)
+    #     end.not_to raise_error
+    #   end
+    # end
 
     it 'should raise TooManyRedirects' do
       VCR.use_cassette('error_to_many_redirects') do
